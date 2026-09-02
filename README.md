@@ -9,6 +9,39 @@ Este repositório contém:
 
 ---
 
+## 📥 Como baixar o código (principalmente JS puro)
+
+Se você quer usar **apenas JavaScript puro**, baixe o arquivo `quiz.js` por um dos métodos abaixo:
+
+### Opção 1) Clonar o repositório completo (recomendado)
+
+```bash
+git clone https://github.com/Lm-Only/quiz-ia.git
+cd quiz-ia
+```
+
+Depois, use diretamente o arquivo:
+
+- `quiz.js`
+
+### Opção 2) Baixar ZIP pelo GitHub
+
+1. Abra: https://github.com/Lm-Only/quiz-ia
+2. Clique em **Code**
+3. Clique em **Download ZIP**
+4. Extraia o arquivo no seu computador
+5. Entre na pasta e pegue o `quiz.js`
+
+### Opção 3) Baixar só o `quiz.js` (sem clonar tudo)
+
+Você pode baixar direto pelo link raw:
+
+- https://raw.githubusercontent.com/Lm-Only/quiz-ia/main/quiz.js
+
+> Dica: salve esse conteúdo em um arquivo chamado `quiz.js` no seu projeto.
+
+---
+
 ## ✨ O que esse módulo faz
 
 A função principal (`gerarQuiz`) recebe um tema (`query`) e um token (`apitoken`), consulta modelos de IA da Yuta APIs em ordem de fallback e retorna um objeto de quiz no formato:
@@ -36,6 +69,44 @@ Se você quiser, ela também já envia a pergunta como enquete em grupo (ex.: Wh
 
 - Node.js com suporte a `fetch` global (Node 18+) **ou** polyfill de `fetch`.
 - Token válido da Yuta APIs (`apitoken`).
+
+---
+
+## 🟨 Uso rápido com JavaScript puro (`quiz.js`)
+
+Se seu projeto já usa ESM (`"type": "module"` no `package.json`), você pode importar assim:
+
+```js
+import { gerarQuiz } from './quiz.js';
+
+const quiz = await gerarQuiz({}, {
+  apitoken: 'SEU_TOKEN',
+  query: 'Animais',
+  enviarDireto: false
+});
+
+console.log(quiz);
+```
+
+Para enviar enquete com bot:
+
+```js
+import { gerarQuiz } from './quiz.js';
+
+const sock = {
+  sendMessage: async (groupID, payload, options) => {
+    // implemente com sua lib de bot
+  }
+};
+
+await gerarQuiz(sock, {
+  apitoken: 'SEU_TOKEN',
+  query: 'Geografia do Brasil',
+  groupID: '1203630xxxx@g.us',
+  quoted: {},
+  enviarDireto: true
+});
+```
 
 ---
 
@@ -149,7 +220,3 @@ interface QuizResponse {
 
 - **Lm Only**
 - **Nk Petrov**
-
----
-
-Se quiser, no próximo passo eu posso criar também uma seção de **FAQ** no README com erros comuns e como resolver rapidamente.
