@@ -11,34 +11,13 @@ Este repositório contém:
 
 ## 📥 Como baixar o código (principalmente JS puro)
 
-Se você quer usar **apenas JavaScript puro**, baixe o arquivo `quiz.js` por um dos métodos abaixo:
+### Baixar o `quiz.js`
 
-### Opção 1) Clonar o repositório completo (recomendado)
-
-```bash
-git clone https://github.com/Lm-Only/quiz-ia.git
-cd quiz-ia
-```
-
-Depois, use diretamente o arquivo:
-
-- `quiz.js`
-
-### Opção 2) Baixar ZIP pelo GitHub
-
-1. Abra: https://github.com/Lm-Only/quiz-ia
-2. Clique em **Code**
-3. Clique em **Download ZIP**
-4. Extraia o arquivo no seu computador
-5. Entre na pasta e pegue o `quiz.js`
-
-### Opção 3) Baixar só o `quiz.js` (sem clonar tudo)
-
-Você pode baixar direto pelo link raw:
+Você pode baixar direto pelo link:
 
 - https://raw.githubusercontent.com/Lm-Only/quiz-ia/main/quiz.js
 
-> Dica: salve esse conteúdo em um arquivo chamado `quiz.js` no seu projeto.
+> Dica: salve esse conteúdo em um arquivo chamado `quiz.js` no seu bot/projeto.
 
 ---
 
